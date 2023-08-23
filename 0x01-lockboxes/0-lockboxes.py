@@ -11,10 +11,12 @@ def canUnlockAll(boxes):
     box_length = set(range(1, len(boxes)))
     # print(len(box_length))
 
-    for box in boxes:
-        for index, key in enumerate(box):
-            if index == len(box) - 2 and key != len(box_length):
+    for index, box in enumerate(boxes):
+        if index == len(boxes) - 2 and len(box_length) != 0:
+            if not box_length.issubset(box):
                 break
+
+        for index, key in enumerate(box):
             if key in box_length:
                 box_length.remove(key)
 
