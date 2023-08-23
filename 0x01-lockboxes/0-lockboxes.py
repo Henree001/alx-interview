@@ -17,6 +17,5 @@ def canUnlockAll(boxes):
                 break
             if key in box_length:
                 box_length.remove(key)
-                print(box_length)
 
     return len(box_length) == 0
