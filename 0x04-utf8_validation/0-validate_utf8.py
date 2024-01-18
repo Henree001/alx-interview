@@ -7,7 +7,7 @@ def validUTF8(data):
     represents a valid utf-8 encoding
     """
     number_bytes = 0
-    
+
     for i in data:
 
         mask_byte = 0b10000000
@@ -17,6 +17,7 @@ def validUTF8(data):
             while i & mask_byte:
                 number_bytes += 1
                 mask_byte >>= 1
+
 
             if number_bytes == 0:
                 continue
@@ -30,7 +31,4 @@ def validUTF8(data):
 
         number_bytes -= 1
 
-
-    return True
-
-    
+    return True if number_bytes == 0 else False
