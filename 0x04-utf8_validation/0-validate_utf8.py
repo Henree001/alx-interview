@@ -18,7 +18,6 @@ def validUTF8(data):
                 number_bytes += 1
                 mask_byte >>= 1
 
-
             if number_bytes == 0:
                 continue
 
